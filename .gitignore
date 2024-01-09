@@ -7,4 +7,5 @@
 /compile-kernel/output
 /compile-kernel/tools/armbian
 .DS_Store
+.idea
 npm-debug.log*
