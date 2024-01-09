@@ -219,8 +219,8 @@ jobs:
     if: ${{ github.event.repository.owner.id }} == ${{ github.event.sender.id }}
 
     steps:
-      - name: Compile the kernel
-        uses: hellotheasia/amlogic-s9xxx-armbian@main
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Initialization environment
         id: init
