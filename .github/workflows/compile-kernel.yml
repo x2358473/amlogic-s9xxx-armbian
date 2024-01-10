@@ -13,7 +13,7 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "unifreq"
+        default: "rockchip-linux/kernel@stable-4.4-rk3399-linux"
         type: choice
         options:
           - unifreq
