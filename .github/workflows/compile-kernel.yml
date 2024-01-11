@@ -17,6 +17,7 @@ on:
         type: choice
         options:
           - unifreq
+          - rockchip-linux/kernel
       kernel_version:
         description: "Select kernel version"
         required: false
@@ -29,6 +30,7 @@ on:
           - 5.10.1
           - 5.15.1
           - 6.1.1
+          - stable-4.4-rk3399-linux
       kernel_auto:
         description: "Auto use the latest kernel"
         required: false
