@@ -3043,14 +3043,7 @@
 		fifo-depth = <0x100>;
 		resets = <0x24 0xd4>;
 		reset-names = "reset";
-		status = "okay";
-		broken-cd;
-		bus-width = <0x04>;
-		cap-sd-highspeed;
-		disable-wp;
-		pinctrl-names = "default";
-		pinctrl-0 = <0xa4 0xa5 0xa6 0xa7>;
-		vqmmc-supply = <0x31>;
+		status = "disabled";
 		phandle = <0x17d>;
 	};
 
