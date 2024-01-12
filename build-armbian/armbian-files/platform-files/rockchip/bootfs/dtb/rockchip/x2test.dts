@@ -2946,7 +2946,7 @@
 		auto-min-freq = <0x4f1a0>;
 		auto-freq-en = <0x01>;
 		#cooling-cells = <0x02>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x17>;
 	};
 
@@ -3088,7 +3088,7 @@
 		assigned-clock-rates = <0x5f5e100>;
 		#address-cells = <0x01>;
 		#size-cells = <0x00>;
-		status = "okay";
+		status = "disabled";
 		phandle = <0x17f>;
 	};
 
@@ -3421,7 +3421,7 @@
 		reset-names = "reset";
 		rockchip,grf = <0x36>;
 		#sound-dai-cells = <0x00>;
-		status = "okay";
+		status = "disabled";
 		phandle = <0x18d>;
 	};
 
@@ -3917,7 +3917,7 @@
 		pinctrl-0 = <0xf8>;
 		clocks = <0x24 0x160 0x24 0x15f>;
 		clock-names = "pwm\0pclk";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x1ae>;
 	};
 
@@ -3929,7 +3929,7 @@
 		pinctrl-0 = <0xf9>;
 		clocks = <0x24 0x160 0x24 0x15f>;
 		clock-names = "pwm\0pclk";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x1af>;
 	};
 
@@ -3941,7 +3941,7 @@
 		pinctrl-0 = <0xfa>;
 		clocks = <0x24 0x160 0x24 0x15f>;
 		clock-names = "pwm\0pclk";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x1b0>;
 	};
 
@@ -3954,7 +3954,7 @@
 		pinctrl-0 = <0xfb>;
 		clocks = <0x24 0x160 0x24 0x15f>;
 		clock-names = "pwm\0pclk";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x1b1>;
 	};
 
