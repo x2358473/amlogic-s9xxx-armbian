@@ -3483,4 +3483,160 @@
 			system-clock-frequency = <0xac4400>;
 		};
 	};
+
+
+    mpp-srv {
+        compatible = "rockchip,mpp-service";
+        rockchip,taskqueue-count = <0x06>;
+        rockchip,resetgroup-count = <0x06>;
+        status = "okay";
+        phandle = <0xd2>;
+    };
+
+	gpu@fde60000 {
+		compatible = "arm,mali-bifrost";
+		reg = <0x00 0xfde60000 0x00 0x4000>;
+		interrupts = <0x00 0x27 0x04 0x00 0x29 0x04 0x00 0x28 0x04>;
+		interrupt-names = "GPU\0MMU\0JOB";
+		upthreshold = <0x28>;
+		downdifferential = <0x0a>;
+		clocks = <0x02 0x01 0x24 0x1b>;
+		clock-names = "clk_mali\0clk_gpu";
+		power-domains = <0x26 0x07>;
+		#cooling-cells = <0x02>;
+		operating-points-v2 = <0x69>;
+		status = "okay";
+		mali-supply = <0x6a>;
+		phandle = <0xc7>;
+
+		power-model {
+			compatible = "simple-power-model";
+			leakage-range = <0x05 0x0f>;
+			ls = <0xffffa23e 0x5927 0x00>;
+			static-coefficient = <0x186a0>;
+			dynamic-coefficient = <0x3b9>;
+			ts = <0xfffe56a6 0xf87a 0xfffffab5 0x14>;
+			thermal-zone = "gpu-thermal";
+			phandle = <0xc8>;
+		};
+	};
+
+    vdpu@fdea0400 {
+        compatible = "rockchip,vpu-decoder-v2";
+        reg = <0x00 0xfdea0400 0x00 0x400>;
+        interrupts = <0x00 0x8b 0x04>;
+        interrupt-names = "irq_dec";
+        clocks = <0x24 0xee 0x24 0xef>;
+        clock-names = "aclk_vcodec\0hclk_vcodec";
+        resets = <0x24 0x11a 0x24 0x11b>;
+        reset-names = "video_a\0video_h";
+        iommus = <0x6d>;
+        power-domains = <0x26 0x0b>;
+        rockchip,srv = <0x6e>;
+        rockchip,taskqueue-node = <0x00>;
+        rockchip,resetgroup-node = <0x00>;
+        status = "okay";
+        phandle = <0xc9>;
+    };
+
+    iommu@fdea0800 {
+        compatible = "rockchip,iommu-v2";
+        reg = <0x00 0xfdea0800 0x00 0x40>;
+        interrupts = <0x00 0x8a 0x04>;
+        interrupt-names = "vdpu_mmu";
+        clock-names = "aclk\0iface";
+        clocks = <0x24 0xee 0x24 0xef>;
+        power-domains = <0x26 0x0b>;
+        #iommu-cells = <0x00>;
+        status = "okay";
+        phandle = <0xca>;
+    };
+
+
+	rk_rga@fdeb0000 {
+		compatible = "rockchip,rga2";
+		reg = <0x00 0xfdeb0000 0x00 0x1000>;
+		interrupts = <0x00 0x5a 0x04>;
+		clocks = <0x24 0xf3 0x24 0xf4 0x24 0xf5>;
+		clock-names = "aclk_rga\0hclk_rga\0clk_rga";
+		power-domains = <0x26 0x0a>;
+		status = "okay";
+		phandle = <0xcb>;
+	};
+
+	ebc@fdec0000 {
+		compatible = "rockchip,rk3568-ebc-tcon";
+		reg = <0x00 0xfdec0000 0x00 0x5000>;
+		interrupts = <0x00 0x11 0x04>;
+		clocks = <0x24 0xf9 0x24 0xfa>;
+		clock-names = "hclk\0dclk";
+		power-domains = <0x26 0x0a>;
+		rockchip,grf = <0x37>;
+		pinctrl-names = "default";
+		pinctrl-0 = <0x6f>;
+		status = "disabled";
+		phandle = <0xcc>;
+	};
+
+	jpegd@fded0000 {
+		compatible = "rockchip,rkv-jpeg-decoder-v1";
+		reg = <0x00 0xfded0000 0x00 0x400>;
+		interrupts = <0x00 0x3e 0x04>;
+		clocks = <0x24 0xfb 0x24 0xfc>;
+		clock-names = "aclk_vcodec\0hclk_vcodec";
+		rockchip,disable-auto-freq;
+		resets = <0x24 0x12c 0x24 0x12d>;
+		reset-names = "video_a\0video_h";
+		iommus = <0x70>;
+		rockchip,srv = <0x6e>;
+		rockchip,taskqueue-node = <0x01>;
+		rockchip,resetgroup-node = <0x01>;
+		power-domains = <0x26 0x0a>;
+		status = "okay";
+		phandle = <0xcd>;
+	};
+
+	iommu@fded0480 {
+		compatible = "rockchip,iommu-v2";
+		reg = <0x00 0xfded0480 0x00 0x40>;
+		interrupts = <0x00 0x3d 0x04>;
+		interrupt-names = "jpegd_mmu";
+		clock-names = "aclk\0iface";
+		clocks = <0x24 0xfb 0x24 0xfc>;
+		power-domains = <0x26 0x0a>;
+		#iommu-cells = <0x00>;
+		status = "okay";
+		phandle = <0xce>;
+	};
+
+	vepu@fdee0000 {
+		compatible = "rockchip,vpu-encoder-v2";
+		reg = <0x00 0xfdee0000 0x00 0x400>;
+		interrupts = <0x00 0x40 0x04>;
+		clocks = <0x24 0xfd 0x24 0xfe>;
+		clock-names = "aclk_vcodec\0hclk_vcodec";
+		rockchip,disable-auto-freq;
+		resets = <0x24 0x12e 0x24 0x12f>;
+		reset-names = "video_a\0video_h";
+		iommus = <0x71>;
+		rockchip,srv = <0x6e>;
+		rockchip,taskqueue-node = <0x02>;
+		rockchip,resetgroup-node = <0x02>;
+		power-domains = <0x26 0x0a>;
+		status = "okay";
+		phandle = <0xcf>;
+	};
+
+	iommu@fdee0800 {
+		compatible = "rockchip,iommu-v2";
+		reg = <0x00 0xfdee0800 0x00 0x40>;
+		interrupts = <0x00 0x3f 0x04>;
+		interrupt-names = "vepu_mmu";
+		clock-names = "aclk\0iface";
+		clocks = <0x24 0xfd 0x24 0xfe>;
+		power-domains = <0x26 0x0a>;
+		#iommu-cells = <0x00>;
+		status = "okay";
+		phandle = <0xd0>;
+	};
 };
