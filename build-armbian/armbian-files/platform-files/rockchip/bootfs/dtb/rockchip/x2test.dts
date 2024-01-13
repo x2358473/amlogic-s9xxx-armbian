@@ -6639,6 +6639,7 @@
 			retain-state-suspended;
 			status = "okay";
 			phandle = <0x2db>;
+			linux,default-trigger = "link";
 		};
 
 		led-status {
