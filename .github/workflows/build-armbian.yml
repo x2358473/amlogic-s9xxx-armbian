@@ -179,6 +179,7 @@ on:
         default: "stable"
         type: choice
         options:
+          - rk35xx
           - stable
           - flippy
           - dev
