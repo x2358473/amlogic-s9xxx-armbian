@@ -182,6 +182,7 @@ on:
         type: choice
         options:
           - rk35xx
+          - rk3588
           - stable
           - flippy
           - dev
