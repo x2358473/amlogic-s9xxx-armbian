@@ -1,11 +1,11 @@
 /dts-v1/;
 
 / {
-	compatible = "jianpian,jptv-3566\0rockchip,rk3566";
+	compatible = "panther,x2\0rockchip,rk3566";
 	interrupt-parent = <0x01>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
-	model = "JP TVbox 3566";
+	model = "Panther X2";
 
 	ddr3-params {
 		version = <0x100>;
