@@ -3189,11 +3189,10 @@
 		reset-names = "core\0bus\0axi\0block\0timer";
 		status = "okay";
 		bus-width = <0x08>;
-		no-sdio;
-		no-sd;
+		mmc-hs200-1_8v;
 		non-removable;
-		max-frequency = <0xbebc200>;
-		full-pwr-cycle-in-suspend;
+		vmmc-supply = <0x2f>;
+		vqmmc-supply = <0x30>;
 		phandle = <0x190>;
 	};
 
