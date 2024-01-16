@@ -6833,7 +6833,7 @@
 
 		led-pwr {
 			label = "led-pwr";
-			default-state = "off";
+			default-state = "on";
 			gpios = <0x3a 0x1c 0x00>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x300>;
@@ -6867,7 +6867,7 @@
 
 		led-status {
 			label = "led-status";
-			default-state = "off";
+			default-state = "on";
 			gpios = <0x3a 0x1b 0x00>;
 			pinctrl-names = "default";
 			pinctrl-0 = <0x303>;
@@ -7723,7 +7723,10 @@
 		bt_enable_h = "/pinctrl/bt/bt-enable-h";
 		bt_host_wake_l = "/pinctrl/bt/bt-host-wake-l";
 		bt_wake_l = "/pinctrl/bt/bt-wake-l";
-		led_work_enable_h = "/pinctrl/leds/led-work-enable-h";
+		led_pwr_enable_h = "/pinctrl/leds/led-pwr-enable-h";
+        led_wifi_enable_h = "/pinctrl/leds/led-wifi-enable-h";
+		led_eth_enable_h = "/pinctrl/leds/led-eth-enable-h";
+		led_status_enable_h = "/pinctrl/leds/led-status-enable-h";
 		vcc5v0_usb_otg_en = "/pinctrl/usb/vcc5v0-usb-otg-en";
 		chosen = "/chosen";
 		fiq_debugger = "/fiq-debugger";
@@ -7731,7 +7734,10 @@
 		cspmu = "/cspmu@fd90c000";
 		adc_keys = "/adc-keys";
 		hdmi_sound = "/hdmi-sound";
-		led_work = "/leds/led-work";
+		led_pwr = "/leds/led-pwr";
+        led_wifi = "/leds/led-wifi";
+        led_eth = "/leds/led-eth";
+        led_status = "/leds/led-status";
 		pdmics = "/dummy-codec";
 		pdm_mic_array = "/pdm-mic-array";
 		spdif_sound = "/spdif-sound";
