@@ -1,11 +1,11 @@
 /dts-v1/;
 
 / {
-	compatible = "panther,x2\0rockchip,rk3566";
+	compatible = "jianpian,jptv-3566\0rockchip,rk3566";
 	interrupt-parent = <0x01>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
-	model = "Panther X2";
+	model = "JP TVbox 3566";
 
 	ddr3-params {
 		version = <0x100>;
@@ -6719,9 +6719,24 @@
 
 		leds {
 
-			led-work-enable-h {
-				rockchip,pins = <0x00 0x1c 0x00 0x111>;
-				phandle = <0x11e>;
+			led-pwr-enable-h {
+				rockchip,pins = <0x00 0x1c 0x00 0x10b>;
+				phandle = <0x300>;
+			};
+
+			led-wifi-enable-h {
+				rockchip,pins = <0x00 0x1e 0x00 0x10b>;
+				phandle = <0x301>;
+			};
+
+			led-eth-enable-h {
+				rockchip,pins = <0x00 0x1d 0x00 0x10b>;
+				phandle = <0x302>;
+			};
+
+			led-status-enable-h {
+				rockchip,pins = <0x00 0x1b 0x00 0x10b>;
+				phandle = <0x303>;
 			};
 		};
 
@@ -6817,13 +6832,49 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led-work {
-			label = "red:work";
-			gpios = <0x3b 0x1c 0x00>;
+		led-pwr {
+			label = "led-pwr";
+			default-state = "off";
+			gpios = <0x3a 0x1c 0x00>;
+			pinctrl-names = "default";
+			pinctrl-0 = <0x300>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x304>;
+		};
+
+		led-wifi {
+			label = "led-wifi";
+			default-state = "on";
+			gpios = <0x3a 0x1e 0x00>;
+			pinctrl-names = "default";
+			pinctrl-0 = <0x301>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x305>;
+		};
+
+		led-eth {
+			label = "led-eth";
+			default-state = "on";
+			gpios = <0x3a 0x1d 0x00>;
 			linux,default-trigger = "heartbeat";
 			pinctrl-names = "default";
-			pinctrl-0 = <0x11e>;
-			phandle = <0x2ed>;
+			pinctrl-0 = <0x302>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x306>;
+		};
+
+		led-status {
+			label = "led-status";
+			default-state = "off";
+			gpios = <0x3a 0x1b 0x00>;
+			pinctrl-names = "default";
+			pinctrl-0 = <0x303>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x307>;
 		};
 	};
 
