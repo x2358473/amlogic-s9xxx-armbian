@@ -674,7 +674,7 @@
 		compatible = "rockchip,mpp-service";
 		rockchip,taskqueue-count = <0x06>;
 		rockchip,resetgroup-count = <0x06>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x65>;
 	};
 
@@ -704,7 +704,7 @@
 
 	rockchip-suspend {
 		compatible = "rockchip,pm-rk3568";
-		status = "disabled";
+		status = "okay";
 		rockchip,sleep-debug-en = <0x01>;
 		rockchip,sleep-mode-config = <0x5ec>;
 		rockchip,wakeup-config = <0x10>;
@@ -1131,7 +1131,7 @@
 			compatible = "rockchip,rk3568-rgb";
 			pinctrl-names = "default";
 			pinctrl-0 = <0x34>;
-			status = "disabled";
+			status = "okay";
 			phandle = <0x146>;
 
 			ports {
@@ -1146,7 +1146,7 @@
 					endpoint@2 {
 						reg = <0x02>;
 						remote-endpoint = <0x1d>;
-						status = "disabled";
+						status = "okay";
 						phandle = <0x8f>;
 					};
 				};
@@ -1671,7 +1671,7 @@
 		power-domains = <0x26 0x06>;
 		operating-points-v2 = <0x5b>;
 		iommus = <0x5c>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x159>;
 	};
 
@@ -1751,7 +1751,7 @@
 			opp-microvolt-L1 = <0xee098 0xee098 0xf4240>;
 			opp-microvolt-L2 = <0xe7ef0 0xe7ef0 0xf4240>;
 			opp-microvolt-L3 = <0xe1d48 0xe1d48 0xf4240>;
-			status = "disabled";
+			status = "okay";
 		};
 
 		opp-j-600000000 {
@@ -1773,7 +1773,7 @@
 		clocks = <0x02 0x02>;
 		clock-names = "bus";
 		operating-points-v2 = <0x5f>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15a>;
 	};
 
@@ -1973,7 +1973,7 @@
 		rockchip,srv = <0x65>;
 		rockchip,taskqueue-node = <0x00>;
 		rockchip,resetgroup-node = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15c>;
 	};
 
@@ -1997,7 +1997,7 @@
 		clocks = <0x24 0xf3 0x24 0xf4 0x24 0xf5>;
 		clock-names = "aclk_rga\0hclk_rga\0clk_rga";
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15d>;
 	};
 
@@ -2011,7 +2011,7 @@
 		rockchip,grf = <0x36>;
 		pinctrl-names = "default";
 		pinctrl-0 = <0x66>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15e>;
 	};
 
@@ -2029,7 +2029,7 @@
 		rockchip,taskqueue-node = <0x01>;
 		rockchip,resetgroup-node = <0x01>;
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15f>;
 	};
 
@@ -2042,7 +2042,7 @@
 		clocks = <0x24 0xfb 0x24 0xfc>;
 		power-domains = <0x26 0x0a>;
 		#iommu-cells = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x67>;
 	};
 
@@ -2060,7 +2060,7 @@
 		rockchip,taskqueue-node = <0x02>;
 		rockchip,resetgroup-node = <0x02>;
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x160>;
 	};
 
@@ -2073,7 +2073,7 @@
 		clocks = <0x24 0xfd 0x24 0xfe>;
 		power-domains = <0x26 0x0a>;
 		#iommu-cells = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x68>;
 	};
 
@@ -2090,7 +2090,7 @@
 		rockchip,taskqueue-node = <0x05>;
 		rockchip,resetgroup-node = <0x05>;
 		iommus = <0x69>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x161>;
 	};
 
@@ -2103,7 +2103,7 @@
 		clock-names = "aclk\0iface";
 		#iommu-cells = <0x00>;
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x69>;
 	};
 
@@ -2113,7 +2113,7 @@
 		interrupts = <0x00 0xb2 0x04>;
 		clocks = <0x24 0xff 0x24 0x100>;
 		clock-names = "pclk\0hclk";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x162>;
 	};
 
@@ -2136,7 +2136,7 @@
 		rockchip,resetgroup-node = <0x03>;
 		power-domains = <0x26 0x0e>;
 		operating-points-v2 = <0x6b>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x163>;
 	};
 
@@ -2177,7 +2177,7 @@
 		rockchip,enable-cmd-retry;
 		#iommu-cells = <0x00>;
 		power-domains = <0x26 0x0e>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x6a>;
 	};
 
@@ -2207,7 +2207,7 @@
 		rockchip,rcb-iova = <0x10000000 0x10000>;
 		rockchip,rcb-min-width = <0x200>;
 		rockchip,task-capacity = <0x10>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x164>;
 	};
 
@@ -2242,7 +2242,7 @@
 		clock-names = "aclk\0iface";
 		power-domains = <0x26 0x0d>;
 		#iommu-cells = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x6e>;
 	};
 
@@ -2275,7 +2275,7 @@
 		power-domains = <0x26 0x08>;
 		rockchip,grf = <0x36>;
 		iommus = <0x71>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x72>;
 	};
 
@@ -2289,35 +2289,35 @@
 		power-domains = <0x26 0x08>;
 		rockchip,disable-mmu-reset;
 		#iommu-cells = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x71>;
 	};
 
 	rkcif_dvp {
 		compatible = "rockchip,rkcif-dvp";
 		rockchip,hw = <0x72>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x73>;
 	};
 
 	rkcif_dvp_sditf {
 		compatible = "rockchip,rkcif-sditf";
 		rockchip,cif = <0x73>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x165>;
 	};
 
 	rkcif_mipi_lvds {
 		compatible = "rockchip,rkcif-mipi-lvds";
 		rockchip,hw = <0x72>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x74>;
 	};
 
 	rkcif_mipi_lvds_sditf {
 		compatible = "rockchip,rkcif-sditf";
 		rockchip,cif = <0x74>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x166>;
 	};
 
@@ -2334,7 +2334,7 @@
 		power-domains = <0x26 0x08>;
 		iommus = <0x75>;
 		rockchip,iq-feature = <0x1bfb 0xf7fe67ff>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x76>;
 	};
 
@@ -2348,21 +2348,21 @@
 		power-domains = <0x26 0x08>;
 		#iommu-cells = <0x00>;
 		rockchip,disable-mmu-reset;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x75>;
 	};
 
 	rkisp-vir0 {
 		compatible = "rockchip,rkisp-vir";
 		rockchip,hw = <0x76>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x167>;
 	};
 
 	rkisp-vir1 {
 		compatible = "rockchip,rkisp-vir";
 		rockchip,hw = <0x76>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x168>;
 	};
 
@@ -2370,7 +2370,7 @@
 		compatible = "rockchip,uio-gmac";
 		reg = <0x00 0xfe010000 0x00 0x10000>;
 		rockchip,ethernet = <0x77>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x169>;
 	};
 
@@ -2453,7 +2453,7 @@
 		clock-names = "aclk_vop\0hclk_vop\0dclk_vp0\0dclk_vp1\0dclk_vp2";
 		iommus = <0x84>;
 		power-domains = <0x26 0x09>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x16b>;
 
 		ports {
@@ -2917,7 +2917,7 @@
 		fifo-depth = <0x100>;
 		resets = <0x24 0xeb>;
 		reset-names = "reset";
-		status = "disabled";
+		status = "okay";
 		phandle = <0x17a>;
 	};
 
@@ -2925,7 +2925,7 @@
 		reg = <0x00 0xfe230000 0x00 0x400>;
 		compatible = "rockchip,rk3568-dfi";
 		rockchip,pmugrf = <0x37>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x99>;
 	};
 
@@ -2946,7 +2946,7 @@
 		auto-min-freq = <0x4f1a0>;
 		auto-freq-en = <0x01>;
 		#cooling-cells = <0x02>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x17>;
 	};
 
