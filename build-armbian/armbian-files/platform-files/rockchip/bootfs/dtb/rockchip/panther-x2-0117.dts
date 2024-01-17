@@ -674,7 +674,7 @@
 		compatible = "rockchip,mpp-service";
 		rockchip,taskqueue-count = <0x06>;
 		rockchip,resetgroup-count = <0x06>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x65>;
 	};
 
@@ -1973,7 +1973,7 @@
 		rockchip,srv = <0x65>;
 		rockchip,taskqueue-node = <0x00>;
 		rockchip,resetgroup-node = <0x00>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15c>;
 	};
 
@@ -1997,7 +1997,7 @@
 		clocks = <0x24 0xf3 0x24 0xf4 0x24 0xf5>;
 		clock-names = "aclk_rga\0hclk_rga\0clk_rga";
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15d>;
 	};
 
@@ -2029,7 +2029,7 @@
 		rockchip,taskqueue-node = <0x01>;
 		rockchip,resetgroup-node = <0x01>;
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x15f>;
 	};
 
@@ -2060,7 +2060,7 @@
 		rockchip,taskqueue-node = <0x02>;
 		rockchip,resetgroup-node = <0x02>;
 		power-domains = <0x26 0x0a>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x160>;
 	};
 
@@ -2207,7 +2207,7 @@
 		rockchip,rcb-iova = <0x10000000 0x10000>;
 		rockchip,rcb-min-width = <0x200>;
 		rockchip,task-capacity = <0x10>;
-		status = "disabled";
+		status = "okay";
 		phandle = <0x164>;
 	};
 
