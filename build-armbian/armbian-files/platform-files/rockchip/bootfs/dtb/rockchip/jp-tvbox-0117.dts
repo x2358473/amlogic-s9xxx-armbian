@@ -1,11 +1,11 @@
 /dts-v1/;
 
 / {
-	compatible = "panther,x2\0rockchip,rk3566";
+	compatible = "jianpian,jptv-3566\0rockchip,rk3566";
 	interrupt-parent = <0x01>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
-	model = "Panther X2";
+	model = "JP TVbox 3566";
 
 	ddr3-params {
 		version = <0x100>;
@@ -3189,10 +3189,11 @@
 		reset-names = "core\0bus\0axi\0block\0timer";
 		status = "okay";
 		bus-width = <0x08>;
-		mmc-hs200-1_8v;
+		no-sdio;
+		no-sd;
 		non-removable;
-		vmmc-supply = <0x2f>;
-		vqmmc-supply = <0x30>;
+		max-frequency = <0xbebc200>;
+		full-pwr-cycle-in-suspend;
 		phandle = <0x190>;
 	};
 
@@ -6718,24 +6719,9 @@
 
 		leds {
 
-			led-pwr-enable-h {
-				rockchip,pins = <0x00 0x1c 0x00 0x10b>;
-				phandle = <0x300>;
-			};
-
-			led-wifi-enable-h {
-				rockchip,pins = <0x00 0x1e 0x00 0x10b>;
-				phandle = <0x301>;
-			};
-
-			led-eth-enable-h {
-				rockchip,pins = <0x00 0x1d 0x00 0x10b>;
-				phandle = <0x302>;
-			};
-
-			led-status-enable-h {
-				rockchip,pins = <0x00 0x1b 0x00 0x10b>;
-				phandle = <0x303>;
+			led-work-enable-h {
+				rockchip,pins = <0x00 0x1c 0x00 0x111>;
+				phandle = <0x11e>;
 			};
 		};
 
@@ -6831,49 +6817,13 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led-pwr {
-			label = "led-pwr";
-			default-state = "on";
-			gpios = <0x3a 0x1c 0x00>;
-			pinctrl-names = "default";
-			pinctrl-0 = <0x300>;
-			retain-state-suspended;
-			status = "okay";
-			phandle = <0x304>;
-		};
-
-		led-wifi {
-			label = "led-wifi";
-			default-state = "on";
-			gpios = <0x3a 0x1e 0x00>;
-			pinctrl-names = "default";
-			pinctrl-0 = <0x301>;
-			retain-state-suspended;
-			status = "okay";
-			phandle = <0x305>;
-		};
-
-		led-eth {
-			label = "led-eth";
-			default-state = "on";
-			gpios = <0x3a 0x1d 0x00>;
+		led-work {
+			label = "red:work";
+			gpios = <0x3b 0x1c 0x00>;
 			linux,default-trigger = "heartbeat";
 			pinctrl-names = "default";
-			pinctrl-0 = <0x302>;
-			retain-state-suspended;
-			status = "okay";
-			phandle = <0x306>;
-		};
-
-		led-status {
-			label = "led-status";
-			default-state = "on";
-			gpios = <0x3a 0x1b 0x00>;
-			pinctrl-names = "default";
-			pinctrl-0 = <0x303>;
-			retain-state-suspended;
-			status = "okay";
-			phandle = <0x307>;
+			pinctrl-0 = <0x11e>;
+			phandle = <0x2ed>;
 		};
 	};
 
@@ -7723,10 +7673,7 @@
 		bt_enable_h = "/pinctrl/bt/bt-enable-h";
 		bt_host_wake_l = "/pinctrl/bt/bt-host-wake-l";
 		bt_wake_l = "/pinctrl/bt/bt-wake-l";
-		led_pwr_enable_h = "/pinctrl/leds/led-pwr-enable-h";
-        led_wifi_enable_h = "/pinctrl/leds/led-wifi-enable-h";
-		led_eth_enable_h = "/pinctrl/leds/led-eth-enable-h";
-		led_status_enable_h = "/pinctrl/leds/led-status-enable-h";
+		led_work_enable_h = "/pinctrl/leds/led-work-enable-h";
 		vcc5v0_usb_otg_en = "/pinctrl/usb/vcc5v0-usb-otg-en";
 		chosen = "/chosen";
 		fiq_debugger = "/fiq-debugger";
@@ -7734,10 +7681,7 @@
 		cspmu = "/cspmu@fd90c000";
 		adc_keys = "/adc-keys";
 		hdmi_sound = "/hdmi-sound";
-		led_pwr = "/leds/led-pwr";
-        led_wifi = "/leds/led-wifi";
-        led_eth = "/leds/led-eth";
-        led_status = "/leds/led-status";
+		led_work = "/leds/led-work";
 		pdmics = "/dummy-codec";
 		pdm_mic_array = "/pdm-mic-array";
 		spdif_sound = "/spdif-sound";
