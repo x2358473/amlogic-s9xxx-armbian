@@ -4436,24 +4436,6 @@
 			phandle = <0x1cd>;
 		};
 
-		pcfg-pull-none-drv-level-13 {
-			bias-disable;
-			drive-strength = <0x0d>;
-			phandle = <0x1ce>;
-		};
-
-		pcfg-pull-none-drv-level-14 {
-			bias-disable;
-			drive-strength = <0x0e>;
-			phandle = <0x1cf>;
-		};
-
-		pcfg-pull-none-drv-level-15 {
-			bias-disable;
-			drive-strength = <0x0f>;
-			phandle = <0x1d0>;
-		};
-
 		pcfg-pull-up-drv-level-0 {
 			bias-pull-up;
 			drive-strength = <0x00>;
@@ -6594,21 +6576,6 @@
 				rockchip,pins = <0x04 0x07 0x04 0x118>;
 				phandle = <0x2d9>;
 			};
-
-			spi3m1-pins {
-				rockchip,pins = <0x04 0x12 0x02 0x118 0x04 0x15 0x02 0x118 0x04 0x13 0x02 0x118>;
-				phandle = <0x2da>;
-			};
-
-			spi3m1-cs0 {
-				rockchip,pins = <0x04 0x16 0x02 0x118>;
-				phandle = <0x2db>;
-			};
-
-			spi3m1-cs1 {
-				rockchip,pins = <0x04 0x19 0x02 0x118>;
-				phandle = <0x2dc>;
-			};
 		};
 
 		gmac-txd-level3 {
@@ -6723,6 +6690,21 @@
 				rockchip,pins = <0x00 0x1c 0x00 0x111>;
 				phandle = <0x11e>;
 			};
+
+			led-wifi-enable-h {
+				rockchip,pins = <0x00 0x1e 0x00 0x10b>;
+				phandle = <0x1ce>;
+			};
+
+			led-eth-enable-h {
+				rockchip,pins = <0x00 0x1d 0x00 0x10b>;
+				phandle = <0x1cf>;
+			};
+
+			led-status-enable-h {
+				rockchip,pins = <0x00 0x1b 0x00 0x10b>;
+				phandle = <0x1d0>;
+			};
 		};
 
 		usb {
@@ -6818,12 +6800,46 @@
 		compatible = "gpio-leds";
 
 		led-work {
-			label = "red:work";
+			label = "led:work";
 			gpios = <0x3b 0x1c 0x00>;
 			linux,default-trigger = "heartbeat";
 			pinctrl-names = "default";
 			pinctrl-0 = <0x11e>;
 			phandle = <0x2ed>;
+		};
+
+        led-wifi {
+			label = "led-wifi";
+			default-state = "on";
+			gpios = <0x3a 0x1e 0x00>;
+			pinctrl-names = "default";
+			pinctrl-0 = <0x1ce>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x2da>;
+		};
+
+		led-eth {
+			label = "led-eth";
+			default-state = "on";
+			gpios = <0x3a 0x1d 0x00>;
+			pinctrl-names = "default";
+			pinctrl-0 = <0x1cf>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x2db>;
+		};
+
+		led-status {
+			label = "led-status";
+			default-state = "on";
+			gpios = <0x3a 0x1b 0x00>;
+			linux,default-trigger = "heartbeat";
+			pinctrl-names = "default";
+			pinctrl-0 = <0x1d0>;
+			retain-state-suspended;
+			status = "okay";
+			phandle = <0x2dc>;
 		};
 	};
 
@@ -7283,9 +7299,6 @@
 		pcfg_pull_none_drv_level_10 = "/pinctrl/pcfg-pull-none-drv-level-10";
 		pcfg_pull_none_drv_level_11 = "/pinctrl/pcfg-pull-none-drv-level-11";
 		pcfg_pull_none_drv_level_12 = "/pinctrl/pcfg-pull-none-drv-level-12";
-		pcfg_pull_none_drv_level_13 = "/pinctrl/pcfg-pull-none-drv-level-13";
-		pcfg_pull_none_drv_level_14 = "/pinctrl/pcfg-pull-none-drv-level-14";
-		pcfg_pull_none_drv_level_15 = "/pinctrl/pcfg-pull-none-drv-level-15";
 		pcfg_pull_up_drv_level_0 = "/pinctrl/pcfg-pull-up-drv-level-0";
 		pcfg_pull_up_drv_level_1 = "/pinctrl/pcfg-pull-up-drv-level-1";
 		pcfg_pull_up_drv_level_2 = "/pinctrl/pcfg-pull-up-drv-level-2";
@@ -7674,6 +7687,9 @@
 		bt_host_wake_l = "/pinctrl/bt/bt-host-wake-l";
 		bt_wake_l = "/pinctrl/bt/bt-wake-l";
 		led_work_enable_h = "/pinctrl/leds/led-work-enable-h";
+		led_wifi_enable_h = "/pinctrl/leds/led-wifi-enable-h";
+		led_eth_enable_h = "/pinctrl/leds/led-eth-enable-h";
+		led_status_enable_h = "/pinctrl/leds/led-status-enable-h";
 		vcc5v0_usb_otg_en = "/pinctrl/usb/vcc5v0-usb-otg-en";
 		chosen = "/chosen";
 		fiq_debugger = "/fiq-debugger";
@@ -7682,6 +7698,9 @@
 		adc_keys = "/adc-keys";
 		hdmi_sound = "/hdmi-sound";
 		led_work = "/leds/led-work";
+        led_wifi = "/leds/led-wifi";
+        led_eth = "/leds/led-eth";
+        led_status = "/leds/led-status";
 		pdmics = "/dummy-codec";
 		pdm_mic_array = "/pdm-mic-array";
 		spdif_sound = "/spdif-sound";
