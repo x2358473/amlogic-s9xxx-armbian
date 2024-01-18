@@ -171,10 +171,11 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "rockchip-linux/kernel@stable-4.4-rk3399-linux"
+        default: "hellotheasia/kernel"
         type: choice
         options:
           - ophub/kernel
+          - hellotheasia/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
