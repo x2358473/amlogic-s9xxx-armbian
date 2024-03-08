@@ -139,6 +139,7 @@ on:
           - s922x-reva
           - s922x-ugoos-am6
           - seewo-sv21
+          - nas-lite
           - smart-am40
           - station-m1
           - sw799
