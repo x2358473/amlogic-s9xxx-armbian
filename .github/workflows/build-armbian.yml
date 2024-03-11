@@ -154,7 +154,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "5.10.160"
+        default: "6.1.43"
         type: choice
         options:
           - 6.1.43
@@ -209,12 +209,12 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "hiasia"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - hiasia
 
 env:
   TZ: Asia/Shanghai
