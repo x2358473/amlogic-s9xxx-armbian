@@ -154,10 +154,11 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.1.43"
+        default: "5.10.160_6.1.25"
         type: choice
         options:
-          - 6.1.43
+          - 5.10.160_6.1.25
+          - 6.1.25
           - 5.10.160
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
