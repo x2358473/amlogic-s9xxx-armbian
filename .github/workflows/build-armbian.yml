@@ -154,6 +154,7 @@ on:
           - xiaobao
           - zcube1-max
           - zysj
+          - orangepi-5-plus
       armbian_kernel:
         description: "Select kernel version."
         required: false
