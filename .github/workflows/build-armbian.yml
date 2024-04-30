@@ -155,6 +155,7 @@ on:
           - zcube1-max
           - zysj
           - orangepi-5-plus
+          - r08
       armbian_kernel:
         description: "Select kernel version."
         required: false
