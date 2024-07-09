@@ -156,6 +156,7 @@ on:
           - zysj
           - orangepi-5-plus
           - r08
+          - hummingbird-4
       armbian_kernel:
         description: "Select kernel version."
         required: false
