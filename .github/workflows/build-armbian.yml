@@ -157,6 +157,7 @@ on:
           - orangepi-5-plus
           - r08
           - hummingbird-4
+          - hummingbird-4-main
       armbian_kernel:
         description: "Select kernel version."
         required: false
