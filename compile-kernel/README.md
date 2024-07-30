@@ -44,7 +44,7 @@ sudo apt-get install -y $(cat compile-kernel/tools/script/ubuntu2204-build-armbi
 | -m        | MakePackage | Sets the package list for making the kernel. When set to `all`, it will make all the files of `Image, modules, dtbs`. When the setting value is `dtbs`, only 3 dtbs files will be produced. Default value: `all` |
 | -p        | AutoPatch   | Sets whether to use custom kernel patches. When set to `true`, it will use the kernel patches in the [tools/patch](tools/patch) directory. For detailed instructions, refer to [how to add kernel patches](../documents/README.md#9-compiling-armbian-kernel). Default value: `false` |
 | -n        | CustomName  | Sets the custom signature of the kernel. When set to `-ophub`, the generated kernel name is `5.15.100-ophub`. Please do not include spaces when setting custom signatures. Default value: `-ophub` |
-| -t        | Toolchain   | Sets the toolchain for compiling the kernel. Options: `clang / gcc`. Default value: `gcc` |
+| -t        | Toolchain   | Sets the toolchain for compiling the kernel. Options: `clang / gcc / gcc-<version>`. Default value: `gcc` |
 | -c        | Compress    | Set the compression format used for initrd in the kernel. Options: `xz / gzip / zstd / lzma`. Default value: `xz` |
 
 
@@ -123,6 +123,10 @@ Compiling Armbian firmware supports localization operations, and it also support
 - #### Installing the Kernel in an Existing Armbian System
 
 You can use the `armbian-update` command to install the compiled kernel into an existing Armbian system. For specific operation methods, please refer to: [Update Armbian Kernel](../README.md#update-armbian-kernel).
+
+- #### Custom Compile Driver Module
+
+In the Linux mainline kernel, some drivers are not yet supported, so you can customize and compile driver modules. For specific instructions, please refer to: [Compile Driver Module](../documents/README.md#93-how-to-customize-compilation-of-driver-modules)
 
 ### Use in OpenWrt System
 
